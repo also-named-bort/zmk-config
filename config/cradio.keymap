@@ -35,7 +35,7 @@
         combo_tognone {
             timeout-ms = <300>;
             key-positions = <0 9 30 33>;
-            bindings = <&tog 5>;
+            bindings = <&soft_off>;
         };
     };
 
