@@ -118,13 +118,13 @@
         compatible = "zmk,combos";
 
         select_left {
-            bindings = <&kp LC(LEFT)>;
+            bindings = <&kp LS(LC(LEFT))>;
             key-positions = <31 0 30>;
             layers = <2>;
         };
 
         select_down {
-            bindings = <&kp LC(LS(DOWN))>;
+            bindings = <&kp LS(LC(DOWN))>;
             key-positions = <1 30 31>;
             layers = <2>;
         };
