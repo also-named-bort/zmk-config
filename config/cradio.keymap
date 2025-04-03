@@ -19,10 +19,10 @@
             bindings = <&kp>, <&kp>;
         };
 
-        blefthintmove: blefthintmove {
+        left_hint_move: left_hint_move {
             compatible = "zmk,behavior-hold-tap";
-            label = "BLEFTHINTMOVE";
-            bindings = <&mlefthintmove>, <&kp>;
+            label = "LEFT_HINT_MOVE";
+            bindings = <&mac_left_hint_move>, <&kp>;
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <21>;
@@ -30,10 +30,10 @@
             flavor = "tap-preferred";
         };
 
-        blefthintshift: blefthintshift {
+        left_hint_shift: left_hint_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "BLEFTHINTSHIFT";
-            bindings = <&mlefthintshift>, <&kp>;
+            label = "LEFT_HINT_SHIFT";
+            bindings = <&mac_left_hint_shift>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -41,10 +41,10 @@
             hold-trigger-key-positions = <22>;
         };
 
-        blefthint: blefthint {
+        left_hint: left_hint {
             compatible = "zmk,behavior-hold-tap";
-            label = "BLEFTHINT";
-            bindings = <&mlefthint>, <&kp>;
+            label = "LEFT_HINT";
+            bindings = <&mac_left_hint>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -52,10 +52,10 @@
             hold-trigger-key-positions = <23>;
         };
 
-        brighthint: brighthint {
+        right_hint: right_hint {
             compatible = "zmk,behavior-hold-tap";
-            label = "BRIGHTHINT";
-            bindings = <&mrighthint>, <&kp>;
+            label = "RIGHT_HINT";
+            bindings = <&m_right_hint>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -63,10 +63,10 @@
             flavor = "tap-preferred";
         };
 
-        brighthintshift: brighthintshift {
+        right_hint_shift: right_hint_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "BRIGHTHINTSHIFT";
-            bindings = <&mrighthintshift>, <&kp>;
+            label = "RIGHT_HINT_SHIFT";
+            bindings = <&mac_right_hint_shift>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -74,10 +74,10 @@
             hold-trigger-key-positions = <27>;
         };
 
-        brighthintmove: brighthintmove {
+        right_hint_move: right_hint_move {
             compatible = "zmk,behavior-hold-tap";
-            label = "BRIGHTHINTMOVE";
-            bindings = <&mrighthintmove>, <&kp>;
+            label = "RIGHT_HINT_MOVE";
+            bindings = <&mac_right_hint_move>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -85,10 +85,10 @@
             flavor = "tap-preferred";
         };
 
-        bpassnormover: bpassnormover {
+        pass_norm_over: pass_norm_over {
             compatible = "zmk,behavior-hold-tap";
-            label = "BPASSNORMOVER";
-            bindings = <&mpassover>, <&mpassnorm>;
+            label = "PASS_NORM_OVER";
+            bindings = <&mac_pass_over>, <&mac_pass_norm>;
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -101,6 +101,7 @@
             label = "SOFTOFF";
             #binding-cells = <0>;
             split-peripheral-off-on-press;
+            hold-time-ms = <500>;
         };
     };
 
@@ -116,64 +117,82 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_tognone {
-            timeout-ms = <300>;
-            key-positions = <0 9 30 33>;
-            bindings = <&soft_off>;
+        select_left {
+            bindings = <&kp LC(LEFT)>;
+            key-positions = <31 0 30>;
+            layers = <2>;
+        };
+
+        select_down {
+            bindings = <&kp LC(LS(DOWN))>;
+            key-positions = <1 30 31>;
+            layers = <2>;
+        };
+
+        select_up {
+            bindings = <&kp LS(LC(UP))>;
+            key-positions = <30 31 2>;
+            layers = <2>;
+        };
+
+        select_right {
+            bindings = <&kp LS(LC(RIGHT))>;
+            key-positions = <3 30 31>;
+            layers = <2>;
         };
     };
 
     macros {
-        mlefthintmove: lefthint2 {
+        mac_left_hint_move: lefthint2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LA(X)>;
             label = "LEFTHINT2";
         };
 
-        mlefthintshift: lefthintshift {
+        mac_left_hint_shift: lefthintshift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LA(LS(L))>;
             label = "LEFTHINTSHIFT";
         };
 
-        mlefthint: lefthint {
+        mac_left_hint: lefthint {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LA(L)>;
             label = "LEFTHINT";
         };
 
-        mrighthint: righthint {
+        m_right_hint: righthint {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LA(L)>;
             label = "RIGHTHINT";
         };
 
-        mrighthintshift: righthintshift {
+        mac_right_hint_shift: righthintshift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LS(LA(L))>;
             label = "RIGHTHINTSHIFT";
         };
 
-        mrighthintmove: righthintmove {
+        mac_right_hint_move: righthintmove {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LA(X)>;
             label = "RIGHTHINTMOVE";
         };
 
-        mpassnorm: mpassnorm {
+        mac_pass_norm: mpassnorm {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N9 &kp N9 &kp N7 &kp N9 &kp TAB &kp N2 &kp N1 &kp N6 &kp N9 &kp ENTER>;
             label = "MPASSNORM";
         };
 
-        mpassover: mpassover {
+        mac_pass_over: mpassover {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N6 &kp N4 &kp N3 &kp N5 &kp TAB &kp N1 &kp N2 &kp N3 &kp N6 &kp ENTER>;
@@ -186,10 +205,10 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W               &kp F                &kp P           &kp B                &kp J            &kp L            &kp U                     &kp Y                  &kp SQT
-&kp A  &hm LGUI R          &hm LALT S           &hm LCTRL T     &hm LC(LA(TAB)) G    &kp M            &hm RCTRL N      &hm RALT E                &hm RGUI I             &kp O
-&kp Z  &blefthintmove 0 X  &blefthintshift 0 C  &blefthint 0 D  &kp V                &kp K            &brighthint 0 H  &brighthintshift 0 COMMA  &brighthintmove 0 DOT  &kp SLASH
-                                                &mo 2           &kp LEFT_SHIFT       &hm LA(C) SPACE  &mo 3
+&kp Q  &kp W                &kp F                 &kp P           &kp B                &kp J            &kp L            &kp U                      &kp Y                   &kp SQT
+&kp A  &hm LGUI R           &hm LALT S            &hm LCTRL T     &hm LC(LA(TAB)) G    &kp M            &hm RCTRL N      &hm RALT E                 &hm RGUI I              &kp O
+&kp Z  &left_hint_move 0 X  &left_hint_shift 0 C  &left_hint 0 D  &kp V                &kp K            &right_hint 0 H  &right_hint_shift 0 COMMA  &right_hint_move 0 DOT  &kp SLASH
+                                                  &mo 2           &kp LEFT_SHIFT       &hm LA(C) SPACE  &mo 3
             >;
         };
 
@@ -204,28 +223,28 @@
 
         nav_layer {
             bindings = <
-&kp END                &kp PAGE_DOWN      &kp PAGE_UP            &kp HOME           &hm LG(TAB) ESCAPE    &kp KP_PLUS   &kp KP_NUMBER_7  &kp KP_N8       &kp KP_N9             &kp KP_MULTIPLY
-&kp LEFT_ARROW         &kp DOWN_ARROW     &kp UP_ARROW           &kp RIGHT_ARROW    &kp TAB               &kp KP_DOT    &hm RCTRL KP_N4  &hm RALT KP_N5  &hm RGUI KP_NUMBER_6  &kp KP_N0
-&hm LC(Z) LA(LS(TAB))  &hm LC(X) LA(TAB)  &hm LC(C) LC(LS(TAB))  &hm LC(V) LC(TAB)  &kp DELETE            &kp KP_MINUS  &kp KP_N1        &kp KP_N2       &kp KP_N3             &kp KP_DIVIDE
-                                                                 &mo 2              &kp LEFT_SHIFT        &kp RETURN    &mo 3
+&kp HOME               &kp PAGE_DOWN      &kp PAGE_UP            &kp END                &kp ESCAPE        &kp KP_PLUS   &kp KP_NUMBER_7  &kp KP_N8       &kp KP_N9             &kp KP_MULTIPLY
+&kp LEFT_ARROW         &kp DOWN_ARROW     &kp UP_ARROW           &kp RIGHT_ARROW        &kp TAB           &kp KP_DOT    &hm RCTRL KP_N4  &hm RALT KP_N5  &hm RGUI KP_NUMBER_6  &kp KP_N0
+&hm LC(Z) LA(LS(TAB))  &hm LC(X) LA(TAB)  &hm LC(C) LC(LS(TAB))  &hm LC(LS(V)) LC(TAB)  &kp DELETE        &kp KP_MINUS  &kp KP_N1        &kp KP_N2       &kp KP_N3             &kp KP_DIVIDE
+                                                                 &mo 2                  &kp LEFT_SHIFT    &kp RETURN    &mo 3
             >;
         };
 
         sym_layer {
             bindings = <
-&none      &none   &none     &none     &none            &none               &kp AMPS  &kp GRAVE  &kp TILDE  &kp BACKSLASH
-&kp SEMI   &kp LT  &kp LBRC  &kp LPAR  &kp RBKT         &kp EQUAL           &kp DLLR  &kp PRCNT  &kp CARET  &kp UNDER
-&kp COLON  &kp GT  &kp RBRC  &kp RPAR  &kp RBKT         &none               &kp EXCL  &kp AT     &kp HASH   &kp PIPE
-                             &mo 2     &kp BACKSPACE    &bpassnormover 0 0  &mo 3
+&none      &none   &none     &none     &none            &none                &kp AMPS  &kp GRAVE  &kp TILDE  &kp BACKSLASH
+&kp SEMI   &kp LT  &kp LBRC  &kp LPAR  &kp RBKT         &kp EQUAL            &kp DLLR  &kp PRCNT  &kp CARET  &kp UNDER
+&kp COLON  &kp GT  &kp RBRC  &kp RPAR  &kp RBKT         &none                &kp EXCL  &kp AT     &kp HASH   &kp PIPE
+                             &mo 2     &kp BACKSPACE    &pass_norm_over 0 0  &mo 3
             >;
         };
 
         tri_layer {
             bindings = <
-&kp PRINTSCREEN  &kp C_MUTE       &kp C_VOLUME_DOWN      &kp C_VOLUME_UP   &bt BT_CLR        &tog 1     &kp F7        &kp F8       &kp F9       &kp F10
-&kp CAPS         &hm LGUI C_PREV  &hm LALT C_PLAY_PAUSE  &hm LCTRL C_NEXT  &none             &none      &hm RCTRL F4  &hm RALT F5  &hm RGUI F6  &kp F11
-&bt BT_SEL 4     &bt BT_SEL 3     &bt BT_SEL 2           &bt BT_SEL 1      &bt BT_SEL 0      &soft_off  &kp F1        &kp F2       &kp F3       &kp F12
-                                                         &trans            &kp LEFT_SHIFT    &none      &trans
+&kp PRINTSCREEN  &kp C_MUTE       &kp C_VOLUME_DOWN      &kp C_VOLUME_UP   &bt BT_CLR        &tog 1    &kp F7        &kp F8       &kp F9       &kp F10
+&kp CAPS         &hm LGUI C_PREV  &hm LALT C_PLAY_PAUSE  &hm LCTRL C_NEXT  &none             &none     &hm RCTRL F4  &hm RALT F5  &hm RGUI F6  &kp F11
+&bt BT_SEL 4     &bt BT_SEL 3     &bt BT_SEL 2           &bt BT_SEL 1      &bt BT_SEL 0      &softoff  &kp F1        &kp F2       &kp F3       &kp F12
+                                                         &trans            &kp LEFT_SHIFT    &none     &trans
             >;
         };
     };
