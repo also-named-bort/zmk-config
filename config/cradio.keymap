@@ -109,42 +109,42 @@
         mlefthintmove: lefthint2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LC(X)>;
+            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LA(X)>;
             label = "LEFTHINT2";
         };
 
         mlefthintshift: lefthintshift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LC(LS(L))>;
+            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LA(LS(L))>;
             label = "LEFTHINTSHIFT";
         };
 
         mlefthint: lefthint {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LC(L)>;
+            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LA(L)>;
             label = "LEFTHINT";
         };
 
         mrighthint: righthint {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LC(L)>;
+            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LA(L)>;
             label = "RIGHTHINT";
         };
 
         mrighthintshift: righthintshift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LC(LS(L))>;
+            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LS(LA(L))>;
             label = "RIGHTHINTSHIFT";
         };
 
         mrighthintmove: righthintmove {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LC(X)>;
+            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LA(X)>;
             label = "RIGHTHINTMOVE";
         };
     };
