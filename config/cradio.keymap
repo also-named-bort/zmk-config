@@ -97,16 +97,6 @@
             tapping-term-ms = <300>;
             hold-trigger-key-positions = <32>;
         };
-
-        ht_bt_clear: ht_bt_clear {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_BT_CLEAR";
-            bindings = <&bt>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            flavor = "tap-preferred";
-        };
     };
 
     conditional_layers {
@@ -232,10 +222,10 @@
 
         nav_layer {
             bindings = <
-&kp HOME               &kp PAGE_DOWN      &kp PAGE_UP            &kp END                &ht_bt_clear BT_CLR ESC    &kp KP_PLUS   &kp KP_NUMBER_7  &kp KP_N8       &kp KP_N9             &kp KP_MULTIPLY
-&kp LEFT_ARROW         &kp DOWN_ARROW     &kp UP_ARROW           &kp RIGHT_ARROW        &kp TAB                    &kp KP_DOT    &hm RCTRL KP_N4  &hm RALT KP_N5  &hm RGUI KP_NUMBER_6  &kp KP_N0
-&hm LC(Z) LA(LS(TAB))  &hm LC(X) LA(TAB)  &hm LC(C) LC(LS(TAB))  &hm LC(LS(V)) LC(TAB)  &kp DELETE                 &kp KP_MINUS  &kp KP_N1        &kp KP_N2       &kp KP_N3             &kp KP_DIVIDE
-                                                                 &mo 2                  &kp LEFT_SHIFT             &kp RETURN    &mo 3
+&kp HOME               &kp PAGE_DOWN      &kp PAGE_UP            &kp END                &kp ESC           &kp KP_PLUS   &kp KP_NUMBER_7  &kp KP_N8       &kp KP_N9             &kp KP_MULTIPLY
+&kp LEFT_ARROW         &kp DOWN_ARROW     &kp UP_ARROW           &kp RIGHT_ARROW        &kp TAB           &kp KP_DOT    &hm RCTRL KP_N4  &hm RALT KP_N5  &hm RGUI KP_NUMBER_6  &kp KP_N0
+&hm LC(Z) LA(LS(TAB))  &hm LC(X) LA(TAB)  &hm LC(C) LC(LS(TAB))  &hm LC(LS(V)) LC(TAB)  &kp DELETE        &kp KP_MINUS  &kp KP_N1        &kp KP_N2       &kp KP_N3             &kp KP_DIVIDE
+                                                                 &mo 2                  &kp LEFT_SHIFT    &kp RETURN    &mo 3
             >;
         };
 
