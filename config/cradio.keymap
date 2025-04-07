@@ -112,25 +112,25 @@
         compatible = "zmk,combos";
 
         select_left {
-            bindings = <&kp LS(LC(LEFT))>;
+            bindings = <&kp LC(LS(LEFT))>;
             key-positions = <31 0 30>;
             layers = <2>;
         };
 
         select_down {
-            bindings = <&kp LS(LC(DOWN))>;
+            bindings = <&kp LC(LS(DOWN))>;
             key-positions = <1 30 31>;
             layers = <2>;
         };
 
         select_up {
-            bindings = <&kp LS(LC(UP))>;
+            bindings = <&kp LC(LS(UP))>;
             key-positions = <30 31 2>;
             layers = <2>;
         };
 
         select_right {
-            bindings = <&kp LS(LC(RIGHT))>;
+            bindings = <&kp LC(LS(RIGHT))>;
             key-positions = <3 30 31>;
             layers = <2>;
         };
@@ -140,42 +140,42 @@
         mac_left_hint_move: lefthint2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LA(X)>;
+            bindings = <&kp LG(LA(S)) &kp T &kp LG(LA(X))>;
             label = "LEFTHINT2";
         };
 
         mac_left_hint_shift: lefthintshift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LA(LS(L))>;
+            bindings = <&kp LG(LA(S)) &kp T &kp LG(LA(LS(L)))>;
             label = "LEFTHINTSHIFT";
         };
 
         mac_left_hint: lefthint {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp T &kp LA(L)>;
+            bindings = <&kp LG(LA(S)) &kp T &kp LG(LA(L))>;
             label = "LEFTHINT";
         };
 
         m_right_hint: righthint {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LA(L)>;
+            bindings = <&kp LG(LA(S)) &kp N &kp LG(LA(L))>;
             label = "RIGHTHINT";
         };
 
         mac_right_hint_shift: righthintshift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LS(LA(L))>;
+            bindings = <&kt LG(LA(S)) &kp N &kp LG(LA(LS(L)))>;
             label = "RIGHTHINTSHIFT";
         };
 
         mac_right_hint_move: righthintmove {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt INS &kt DELETE &kt INS &kt DELETE &kp N &kp LA(X)>;
+            bindings = <&kp LG(LA(S)) &kp N &kp LG(LA(X))>;
             label = "RIGHTHINTMOVE";
         };
 
@@ -199,19 +199,19 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W                &kp F                 &kp P           &kp B                &kp J              &kp L            &kp U                      &kp Y                   &kp SQT
-&kp A  &hm LGUI R           &hm LALT S            &hm LCTRL T     &hm LC(LA(TAB)) G    &hm LC(LA(TAB)) M  &hm RCTRL N      &hm RALT E                 &hm RGUI I              &kp O
-&kp Z  &left_hint_move 0 X  &left_hint_shift 0 C  &left_hint 0 D  &kp V                &kp K              &right_hint 0 H  &right_hint_shift 0 COMMA  &right_hint_move 0 DOT  &kp SLASH
-                                                  &mo 2           &kp LEFT_SHIFT       &hm LA(C) SPACE    &mo 3
+&kp Q  &kp W                &kp F                 &kp P           &kp B                &kp J                &kp L            &kp U                      &kp Y                   &kp SQT
+&kp A  &hm LGUI R           &hm LALT S            &hm LCTRL T     &hm LC(LA(TAB)) G    &hm LC(LA(TAB)) M    &hm RCTRL N      &hm RALT E                 &hm RGUI I              &kp O
+&kp Z  &left_hint_move 0 X  &left_hint_shift 0 C  &left_hint 0 D  &kp V                &kp K                &right_hint 0 H  &right_hint_shift 0 COMMA  &right_hint_move 0 DOT  &kp SLASH
+                                                  &mo 2           &kp LEFT_SHIFT       &hm LG(LA(C)) SPACE  &mo 3
             >;
         };
 
         qwert_layer {
             bindings = <
-&kp Q  &kp W                &kp E                 &kp R           &kp T                &kp Y              &kp U            &kp I                      &kp O                      &kp P
-&kp A  &hm LGUI S           &hm LALT D            &hm LCTRL F     &hm LA(LC(TAB)) G    &hm LA(LC(TAB)) H  &hm RCTRL J      &hm LALT K                 &hm LGUI L                 &kp SINGLE_QUOTE
-&kp Z  &left_hint_move 0 X  &left_hint_shift 0 C  &left_hint 0 V  &kp B                &kp N              &right_hint 0 M  &right_hint_shift 0 COMMA  &right_hint_move 0 PERIOD  &kp SLASH
-                                                  &mo 2           &kp LEFT_SHIFT       &hm LA(C) SPACE    &mo 3
+&kp Q  &kp W                &kp E                 &kp R           &kp T                &kp Y                &kp U            &kp I                      &kp O                      &kp P
+&kp A  &hm LGUI S           &hm LALT D            &hm LCTRL F     &hm LA(LC(TAB)) G    &hm LA(LC(TAB)) H    &hm RCTRL J      &hm LALT K                 &hm LGUI L                 &kp SINGLE_QUOTE
+&kp Z  &left_hint_move 0 X  &left_hint_shift 0 C  &left_hint 0 V  &kp B                &kp N                &right_hint 0 M  &right_hint_shift 0 COMMA  &right_hint_move 0 PERIOD  &kp SLASH
+                                                  &mo 2           &kp LEFT_SHIFT       &hm LG(LA(C)) SPACE  &mo 3
             >;
         };
 
