@@ -91,10 +91,10 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W            &kp F            &kp P            &kp B             &kp J                &kp L            &kp U                    &kp Y                      &kp SQT
-&kp A  &hm LGUI R       &hm LALT S       &hm LCTRL T      &kp G             &kp M                &hm RCTRL N      &hm RALT E               &hm RGUI I                 &kp O
-&kp Z  &hm LA(LG(X)) X  &hm LA(LG(C)) C  &hm LA(LG(D)) D  &kp V             &kp K                &hm LA(LG(H)) H  &hm LA(LG(COMMA)) COMMA  &hm LA(LG(PERIOD)) PERIOD  &kp SLASH
-                                         &mo 1            &kp LEFT_SHIFT    &hm LG(LA(C)) SPACE  &mo 2
+&kp Q  &kp W            &kp F            &kp P            &kp B             &kp J                    &kp L            &kp U                    &kp Y                      &kp SQT
+&kp A  &hm LGUI R       &hm LALT S       &hm LCTRL T      &kp G             &kp M                    &hm RCTRL N      &hm RALT E               &hm RGUI I                 &kp O
+&kp Z  &hm LA(LG(X)) X  &hm LA(LG(C)) C  &hm LA(LG(D)) D  &kp V             &kp K                    &hm LA(LG(H)) H  &hm LA(LG(COMMA)) COMMA  &hm LA(LG(PERIOD)) PERIOD  &kp SLASH
+                                         &mo 1            &kp LEFT_SHIFT    &hm LA(LG(SPACE)) SPACE  &mo 2
             >;
         };
 
