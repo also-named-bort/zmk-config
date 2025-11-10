@@ -110,7 +110,7 @@
         sym_layer {
             bindings = <
 &none      &none   &none     &none     &none            &none                &kp AMPS  &kp GRAVE  &kp TILDE  &kp BACKSLASH
-&kp SEMI   &kp LT  &kp LBRC  &kp LPAR  &kp RBKT         &kp EQUAL            &kp DLLR  &kp PRCNT  &kp CARET  &kp UNDER
+&kp SEMI   &kp LT  &kp LBRC  &kp LPAR  &kp LBKT         &kp EQUAL            &kp DLLR  &kp PRCNT  &kp CARET  &kp UNDER
 &kp COLON  &kp GT  &kp RBRC  &kp RPAR  &kp RBKT         &none                &kp EXCL  &kp AT     &kp HASH   &kp PIPE
                              &mo 1     &kp BACKSPACE    &pass_norm_over 0 0  &mo 2
             >;
